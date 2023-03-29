@@ -31,9 +31,11 @@ const Post = ({ post }) => {
       <div className='border-b-2 w-1/3 mt-1 border-sky-900'></div>
       <span className='text-gray-500'>Posted date at {post.metadata.date}</span>
       <br />
-      {post.metadata.tag.map((tag: string) => (
-        <p className='text-white bg-sky-900 rounded-xl font-medium mt-2 px-2 inline-block'>
-          {tag}
+      {post.metadata.tags.map((tag: string, index:number) => (
+        <p className='text-white bg-sky-900 rounded-xl font-medium mt-2 px-2 inline-block' key={index}>
+
+          <Link href={`/posts/tag/${tag}/page/1`}>
+          {tag}</Link>
         </p>
       ))}
 
